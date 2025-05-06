@@ -44,13 +44,5 @@ Future<void> saveImageToGallery(BuildContext context, Uint8List imageBytes) asyn
     return;
   }
   final result = await ImageGallerySaverPlus.saveImage(imageBytes, quality: 100, name: "editing_image_${DateTime.now()}");
-  if (result['isSuccess']) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      backgroundColor: Colors.greenAccent,
-      content: Text("Image is saved to gallery")));
-  } else {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      backgroundColor: Colors.redAccent,
-      content: Text("Failed to save image")));
-  }
+  return result['isSuccess'] ?? false;
 }

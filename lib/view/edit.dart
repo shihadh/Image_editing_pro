@@ -179,9 +179,14 @@ void save(){
                                 if (currentImage != null) {
                                   save();
                                   saveImageToGallery(context, currentImage!);
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                    backgroundColor: Colors.greenAccent,
+                                    content: Text("Image is saved to gallery")));
                                   Navigator.pop(context);
                                 } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("No image to save")));
+                                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                        backgroundColor: Colors.redAccent,
+                                        content: Text("Failed to save image")));
                                 }
                               },
 
