@@ -29,7 +29,7 @@ class _EditPageState extends State<EditPage> {
   Color conColor = Color(0xFF1A1A1A);
 
   void check(){
-    if(!islight!){
+    if(islight==false){
         bg=Colors.black;
         txi = Colors.white;
         conColor = Color(0xFF1A1A1A);

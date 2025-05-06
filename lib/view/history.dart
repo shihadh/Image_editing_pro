@@ -18,7 +18,7 @@ class _HistoryPageState extends State<HistoryPage> {
   Color txi = Colors.white;
   bool? islight;
   void check(){
-    if(!islight!){
+    if(islight==false){
         bg=Colors.black;
         txi = Colors.white;
     }else{
@@ -55,7 +55,7 @@ class _HistoryPageState extends State<HistoryPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(onPressed: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EditPage(byteImage: item.image,),));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EditPage(byteImage: item.image,islight: islight,),));
                 }, icon: Icon(Icons.edit,color: txi)),
                 Gap(2),
                 IconButton(onPressed: (){delete(index);}, icon: Icon(Icons.delete,color: txi)),
