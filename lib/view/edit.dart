@@ -83,7 +83,7 @@ class _EditPageState extends State<EditPage> {
   Future<void> drowing()async{
 
     await  Navigator.push(context, MaterialPageRoute(
-      builder: (context) => DrawPage(byteImage: currentImage),));
+      builder: (context) => DrawPage(byteImage: currentImage,islight: islight,)));
       final db =await Hive.openBox("db");
       final Uint8List? tpsaved =db.get("tempimage");
       if(tpsaved != null){
@@ -98,7 +98,7 @@ class _EditPageState extends State<EditPage> {
   await Navigator.push(
     context,
     MaterialPageRoute(
-      builder: (context) => TextPage(byteImage: currentImage),
+      builder: (context) => TextPage(byteImage: currentImage,islight: islight,),
     ),
   );
 
