@@ -21,7 +21,6 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
-  Uint8List? byteImage;
   Uint8List?  currentImage;
   bool? islight;
   Color bg=Colors.black;
